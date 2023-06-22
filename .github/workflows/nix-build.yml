@@ -1,0 +1,27 @@
+name: Build static executables with Nix
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install nix
+      uses: cachix/install-nix-action@v22
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+
+    - name: Build
+      run: nix-build shell.nix
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: canonicalize-pipeline
+        path: result/bin/canonicalize-pipeline
