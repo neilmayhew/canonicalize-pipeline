@@ -1,4 +1,4 @@
-{ nixpkgs ? import <nixpkgs> {}, static ? true }:
+{ nixpkgs ? import <nixpkgs> {}, static ? !nixpkgs.stdenv.hostPlatform.isDarwin }:
 
 with (if static then nixpkgs.pkgsStatic else nixpkgs);
 
