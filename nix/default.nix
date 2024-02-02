@@ -4,7 +4,7 @@
 mkDerivation {
   pname = "canonicalize-pipeline";
   version = "1.0.0.0";
-  src = lib.cleanSource ./.;
+  src = lib.cleanSource ./..;
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
