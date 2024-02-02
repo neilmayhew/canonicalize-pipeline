@@ -31,8 +31,14 @@ jobs:
     - name: Build
       run: nix build
 
+    - name: Record system details
+      id: system-details
+      run: |
+        echo "system=$(uname -s)" >>"$GITHUB_OUTPUT"
+        echo "machine=$(uname -m)" >>"$GITHUB_OUTPUT"
+
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: canonicalize-pipeline
+        name: canonicalize-pipeline-${{ steps.system-details.outputs.system }}-${{ steps.system-details.outputs.machine }}
         path: result/bin/canonicalize-pipeline
