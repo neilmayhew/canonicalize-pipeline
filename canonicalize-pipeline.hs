@@ -31,15 +31,16 @@ main = do
       ( helper <*> do
           optFile <- strArgument $
             metavar "FILE" <> value "/dev/stdin" <>
-            help "Help" <> showDefaultWith id
+            help "The file to be canonicalized" <> showDefaultWith id
           optDebug <- switch $
             long "debug" <> internal
           pure ProgramOptions{..}
       )
       ( progDesc "Canonicalize a Concourse pipeline file" <>
-        footerDoc (Just . fillSep . map pretty . concatMap words $
+        footerDoc (Just . fillSep . map pretty . words $ unlines
           [ "Currently, the only transformation is to sort the resources by name."
-          ] )
+          ]
+        )
       )
     )
 

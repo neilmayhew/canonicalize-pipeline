@@ -39,7 +39,7 @@ Usage: canonicalize-pipeline [FILE]
 
 Available options:
   -h,--help                Show this help text
-  FILE                     Help (default: /dev/stdin)
+  FILE                     The file to be canonicalized (default: /dev/stdin)
 
 Currently, the only transformation is to sort the resources by name.
 ```
