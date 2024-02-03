@@ -1,6 +1,6 @@
-# canonicalize-pipeline
+[![CI Status](https://github.com/neilmayhew/canonicalize-pipeline/actions/workflows/nix-build.yml/badge.svg)](https://github.com/neilmayhew/canonicalize-pipeline/actions)
 
-_Canonicalize a Concourse pipeline file_
+# Canonicalize a Concourse pipeline file
 
 Adjust a Concourse pipeline file to a standard form so that it can be compared against other pipeline files (including the YAML that was used to define it originally) without noise from differences that aren't semantically meaningful (eg list ordering).
 

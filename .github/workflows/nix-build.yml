@@ -1,4 +1,4 @@
-name: Build static executables with Nix
+name: Nix Build
 
 on:
   pull_request:
