@@ -1,5 +1,5 @@
-{ mkDerivation, lib, base, lens-aeson, microlens
-, optparse-applicative, terminal-size, yaml
+{ mkDerivation, aeson, base, bytestring, lens-aeson, lib, microlens
+, optparse-applicative, terminal-size, vector, yaml
 }:
 mkDerivation {
   pname = "canonicalize-pipeline";
@@ -8,11 +8,12 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
-    base lens-aeson microlens optparse-applicative terminal-size yaml
+    aeson base bytestring lens-aeson microlens optparse-applicative
+    terminal-size vector yaml
   ];
-  mainProgram = "canonicalize-pipeline";
-  description = "Canonicalize a Concourse pipeline file";
   homepage = "https://github.com/neilmayhew/canonicalize-pipeline";
+  description = "Canonicalize a Concourse pipeline file";
   license = lib.licenses.mit;
   maintainers = with lib.maintainers; [ neilmayhew ];
+  mainProgram = "canonicalize-pipeline";
 }
