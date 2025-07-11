@@ -28,3 +28,4 @@ executable canonicalize-pipeline
     vector,
     yaml
   default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Wunused-packages -Werror
