@@ -5,11 +5,12 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.simpleFlake {
-      inherit self nixpkgs;
-      name = "canonicalize-pipeline";
-      overlay = nix/overlay.nix;
-      shell = nix/shell.nix;
-    };
+  outputs = allInputs@{ self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let args = (allInputs // { inherit system; }); in {
+        packages = import nix/packages.nix args;
+        devShells = import nix/shells.nix args;
+        apps = import nix/apps.nix args;
+      }
+    );
 }

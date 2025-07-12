@@ -1,4 +1,4 @@
-cabal-version:      1.24
+cabal-version:      3.8
 name:               canonicalize-pipeline
 version:            1.0.0.3
 synopsis:           Canonicalize a Concourse pipeline file

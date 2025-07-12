@@ -1,3 +1,4 @@
+# Generated using `cabal2nix ..`
 { mkDerivation, aeson, base, bytestring, lens-aeson, lib, microlens
 , optparse-applicative, terminal-size, vector, yaml
 }:
