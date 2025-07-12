@@ -1,31 +1,38 @@
-cabal-version:      3.8
-name:               canonicalize-pipeline
-version:            1.0.0.3
-synopsis:           Canonicalize a Concourse pipeline file
-description:        Adjust a Concourse pipeline file to a standard form so that
-                    it can be compared against other pipeline files (including
-                    the YAML that was used to define it originally) without
-                    noise from differences that aren't semantically meaningful
-                    (eg list ordering).
-license:            MIT
-license-file:       LICENSE
-author:             Neil Mayhew
-maintainer:         neil@mayhew.name
-copyright:          © 2023 Neil Mayhew
-homepage:           https://github.com/neilmayhew/canonicalize-pipeline
-build-type:         Simple
+cabal-version: 3.8
+name: canonicalize-pipeline
+version: 1.0.0.3
+synopsis: Canonicalize a Concourse pipeline file
+description:
+  Adjust a Concourse pipeline file to a standard form so that
+  it can be compared against other pipeline files (including
+  the YAML that was used to define it originally) without
+  noise from differences that aren't semantically meaningful
+  (eg list ordering).
+
+license: MIT
+license-file: LICENSE
+author: Neil Mayhew
+maintainer: neil@mayhew.name
+copyright: © 2023 Neil Mayhew
+homepage: https://github.com/neilmayhew/canonicalize-pipeline
+build-type: Simple
 
 executable canonicalize-pipeline
-  main-is:          canonicalize-pipeline.hs
+  main-is: canonicalize-pipeline.hs
   build-depends:
-    base,
     aeson,
+    base,
     bytestring,
     lens-aeson,
     microlens,
     optparse-applicative,
     terminal-size,
     vector,
-    yaml
+    yaml,
+
   default-language: Haskell2010
-  ghc-options: -Wall -Wcompat -Wunused-packages -Werror
+  ghc-options:
+    -Wall
+    -Wcompat
+    -Wunused-packages
+    -Werror
