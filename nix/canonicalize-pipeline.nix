@@ -4,7 +4,7 @@
 }:
 mkDerivation {
   pname = "canonicalize-pipeline";
-  version = "1.0.0.3";
+  version = "1.0.0.4";
   src = lib.cleanSource ./..;
   isLibrary = false;
   isExecutable = true;

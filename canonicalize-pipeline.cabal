@@ -1,6 +1,6 @@
 cabal-version: 3.8
 name: canonicalize-pipeline
-version: 1.0.0.3
+version: 1.0.0.4
 synopsis: Canonicalize a Concourse pipeline file
 description:
   Adjust a Concourse pipeline file to a standard form so that
