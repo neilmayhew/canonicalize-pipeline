@@ -25,11 +25,11 @@ jobs:
     - name: Enable cachix
       uses: cachix/cachix-action@v16
       with:
-        name: static-haskell-nix
-        skipPush: true
+        name: neil-mayhew
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
 
     - name: Build
-      run: nix build
+      run: nix build --print-out-paths | cachix push neil-mayhew
 
     - name: Record system details
       id: system-details
